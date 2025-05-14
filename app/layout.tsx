@@ -26,7 +26,7 @@ export default function RootLayout({
             <header className="border-b">
               <div className="container mx-auto py-4 px-4">
                 <Link href="/" className="text-xl font-bold">
-                  Manga Tracker
+                  Manga Tracker - Kalebe
                 </Link>
               </div>
             </header>
