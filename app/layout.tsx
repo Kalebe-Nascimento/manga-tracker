@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Tracker de Mangás e Quadrinhos",
   description: "Acompanhe sua leitura de mangás e quadrinhos",
-    generator: 'v0.dev'
+    generator: 'Kalebe'
 }
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
             <header className="border-b">
               <div className="container mx-auto py-4 px-4">
                 <Link href="/" className="text-xl font-bold">
-                  Manga Tracker - Kalebe
+                  Manga Tracker
                 </Link>
               </div>
             </header>
