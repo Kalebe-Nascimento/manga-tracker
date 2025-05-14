@@ -29,3 +29,9 @@ public/assets
 .DS_Store
 .vscode
 .idea
+
+.next
+npm-debug.log
+yarn-error.log
+Dockerfile
+docker-compose.yml
