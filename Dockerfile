@@ -1,19 +1,26 @@
-FROM node:18-alpine AS builder
+# Etapa 1: Instalação de dependências
+FROM node:18-alpine AS deps
 
 WORKDIR /app
 
-# Instalar dependências de build necessárias para node-gyp
 RUN apk add --no-cache python3 make g++ krb5-dev
 
 COPY package.json package-lock.json* ./
 
 RUN npm install --legacy-peer-deps
 
+# Etapa 2: Build da aplicação
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 RUN npx prisma generate
 RUN npm run build
 
+# Etapa 3: Runner com apenas o necessário
 FROM node:18-alpine AS runner
 
 WORKDIR /app

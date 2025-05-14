@@ -16,9 +16,7 @@ services:
       - postgres
     restart: unless-stopped
     volumes:
-      - ./:/app
-      - /app/node_modules
-      - /app/.next
+      - ./:/app:cached
     networks:
       - manga_network  # Adiciona a rede personalizada
 
