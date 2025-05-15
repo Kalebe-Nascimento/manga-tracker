@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
-    "vercel-build": "./vercel-build.sh",
+    "lint": "next lint",
     "postinstall": "prisma generate",
-    "lint": "next lint"
+    "vercel-build": "pnpm prisma generate && pnpm build"
   },
   "dependencies": {
     "@aws-sdk/credential-providers": "latest",

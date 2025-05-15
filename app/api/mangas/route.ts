@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { getMangaList, addManga } from "@/lib/manga-service"
+import { PrismaClient } from '@prisma/client';
 
 export async function GET() {
   try {
