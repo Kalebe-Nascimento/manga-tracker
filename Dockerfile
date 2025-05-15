@@ -13,6 +13,7 @@ RUN apk add --no-cache python3 make g++ krb5-dev
 
 COPY package.json package-lock.json ./
 RUN npm ci --legacy-peer-deps
+RUN npx prisma generate
 
 # Etapa 2: Build da aplicação
 FROM node:18-alpine AS builder
